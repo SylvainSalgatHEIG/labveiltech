@@ -5,8 +5,8 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta property="og:site_name" content="Huabing Blog">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://zhaohuabing.com/img/home-bg-jeep.jpg">
-<meta property="twitter:image" content="https://zhaohuabing.com/img/home-bg-jeep.jpg">
+<meta property="og:image" content="https://sylvainsalgatheig.github.io/labveiltech//img/home-bg-jeep.jpg">
+<meta property="twitter:image" content="https://sylvainsalgatheig.github.io/labveiltech//img/home-bg-jeep.jpg">
 <meta name=title content="谈谈微服务架构中的基础设施：Service Mesh与Istio">
 <meta property="og:title" content="谈谈微服务架构中的基础设施：Service Mesh与Istio">
 <meta property="twitter:title" content="谈谈微服务架构中的基础设施：Service Mesh与Istio">
@@ -15,17 +15,17 @@
 <meta property="twitter:description" content="作为一种架构模式，微服务将复杂系统切分为数十乃至上百个小服务，每个服务负责实现一个独立的业务逻辑。这些小服务易于被小型的软件工程师团队所理解和修改，并带来了语言和框架选择灵活性，缩短应用开发上线时间，可根据不同的工作负载和资源要求对服务进行独立缩扩容等优势。另一方面，当应用被拆分为多个微服务进程后，进程内的方法调用变成了了进程间的远程调用。引入了对大量服务的连接、管理和监控的复杂性,本文介绍了Service Mesh模式如何应对微服务架构的这些挑战，以及Service Mesh的明星开源项目Istio。">
 <meta property="twitter:card" content="summary">
 <meta name=keyword content="赵化冰, zhaohuabing, Zhaohuabing, , 赵化冰的网络日志, 赵化冰的博客, Zhaohuabing Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
-<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel="shortcut icon" href=/labveiltech/img/favicon.ico>
 <title>谈谈微服务架构中的基础设施：Service Mesh与Istio | 赵化冰的博客 | Zhaohuabing Blog</title>
-<link rel=canonical href=/2018/03/29/what-is-service-mesh-and-istio/>
-<link rel=stylesheet href=/css/bootstrap.min.css>
-<link rel=stylesheet href=/css/hugo-theme-cleanwhite.min.css>
-<link rel=stylesheet href=/css/zanshang.css>
+<link rel=canonical href=/labveiltech/2018/03/29/what-is-service-mesh-and-istio/>
+<link rel=stylesheet href=/labveiltech/css/bootstrap.min.css>
+<link rel=stylesheet href=/labveiltech/css/hugo-theme-cleanwhite.min.css>
+<link rel=stylesheet href=/labveiltech/css/zanshang.css>
 <link href=https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css rel=stylesheet type=text/css>
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js></script>
-<script src=/js/hux-blog.min.js></script>
-<script src=/js/lazysizes.min.js></script>
+<script src=/labveiltech/js/jquery.min.js></script>
+<script src=/labveiltech/js/bootstrap.min.js></script>
+<script src=/labveiltech/js/hux-blog.min.js></script>
+<script src=/labveiltech/js/lazysizes.min.js></script>
 </head>
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
 <div class=container-fluid>
@@ -36,28 +36,28 @@
 <span class=icon-bar></span>
 <span class=icon-bar></span>
 </button>
-<a class=navbar-brand href=/>Huabing Blog</a>
+<a class=navbar-brand href=/labveiltech/>Huabing Blog</a>
 </div>
 <div id=huxblog_navbar>
 <div class=navbar-collapse>
 <ul class="nav navbar-nav navbar-right">
 <li>
-<a href=/>All Posts</a>
+<a href=/labveiltech/>All Posts</a>
 </li>
 <li>
-<a href=/categories/life>life</a>
+<a href=/labveiltech/categories/life>life</a>
 </li>
 <li>
-<a href=/categories/tech>tech</a>
+<a href=/labveiltech/categories/tech>tech</a>
 </li>
 <li>
-<a href=/categories/tips>tips</a>
+<a href=/labveiltech/categories/tips>tips</a>
 </li>
-<li><a href=/archive/>ARCHIVE</a></li>
-<li><a href=/notes/>NOTES</a></li>
-<li><a href=/about/>ABOUT</a></li>
+<li><a href=/labveiltech/archive/>ARCHIVE</a></li>
+<li><a href=/labveiltech/notes/>NOTES</a></li>
+<li><a href=/labveiltech/about/>ABOUT</a></li>
 <li>
-<a href=/search><i class="fa fa-search"></i></a>
+<a href=/labveiltech/search><i class="fa fa-search"></i></a>
 </li>
 </ul>
 </div>
@@ -65,20 +65,20 @@
 </div>
 </nav>
 <script>var $body=document.body,$toggle=document.querySelector('.navbar-toggle'),$navbar=document.querySelector('#huxblog_navbar'),$collapse=document.querySelector('.navbar-collapse');$toggle.addEventListener('click',handleMagic);function handleMagic(a){$navbar.className.indexOf('in')>0?($navbar.className=" ",setTimeout(function(){$navbar.className.indexOf('in')<0&&($collapse.style.height="0px")},400)):($collapse.style.height="auto",$navbar.className+=" in")}</script>
-<style type=text/css>header.intro-header{background-image:url(/img/istio-install_and_example/post-bg.jpg)}</style>
+<style type=text/css>header.intro-header{background-image:url(/labveiltech/img/istio-install_and_example/post-bg.jpg)}</style>
 <header class=intro-header>
 <div class=container>
 <div class=row>
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 <div class=post-heading>
 <div class=tags>
-<a class=tag href=/tags/microservice title=Microservice>
+<a class=tag href=/labveiltech/tags/microservice title=Microservice>
 Microservice
 </a>
-<a class=tag href=/tags/service-mesh title="Service Mesh">
+<a class=tag href=/labveiltech/tags/service-mesh title="Service Mesh">
 Service Mesh
 </a>
-<a class=tag href=/tags/istio title=Istio>
+<a class=tag href=/labveiltech/tags/istio title=Istio>
 Istio
 </a>
 </div>
@@ -335,7 +335,7 @@ Envoy收集一个端到端调用中的各个分段的数据，并将这些调用
 <div class=zs-modal-box>
 <div class=zs-modal-head>
 <button type=button class=close>×</button>
-<span class=author><a href=https://zhaohuabing.com><img src=/img/favicon.png>Huabing Blog</a></span>
+<span class=author><a href=https://sylvainsalgatheig.github.io/labveiltech/><img src=/labveiltech/img/favicon.png>Huabing Blog</a></span>
 <p class=tip><i></i><span>真诚赞赏，手留余香</span></p>
 </div>
 <div class=zs-modal-body>
@@ -350,23 +350,23 @@ Envoy收集一个端到端调用中的各个分段的数据，并将这些调用
 <div class=zs-modal-pay>
 <button class="btn btn-bred" id=pay-text>2元</button>
 <p>使用<span id=pay-type>微信</span>扫描二维码完成支付</p>
-<img src=/img/reward/wechat-2.png id=pay-image>
+<img src=/labveiltech/img/reward/wechat-2.png id=pay-image>
 </div>
 </div>
 <div class=zs-modal-footer>
-<label><input type=radio name=zs-type value=wechat class=zs-type checked><span><span class=zs-wechat><img src=/img/reward/wechat-btn.png></span></label>
-<label><input type=radio name=zs-type value=alipay class=zs-type class=zs-alipay><img src=/img/reward/alipay-btn.png></span></label>
+<label><input type=radio name=zs-type value=wechat class=zs-type checked><span><span class=zs-wechat><img src=/labveiltech/img/reward/wechat-btn.png></span></label>
+<label><input type=radio name=zs-type value=alipay class=zs-type class=zs-alipay><img src=/labveiltech/img/reward/alipay-btn.png></span></label>
 </div>
 </div>
-<script type=text/javascript src=/js/reward.js></script>
+<script type=text/javascript src=/labveiltech/js/reward.js></script>
 <hr>
 <ul class=pager>
 <li class=previous>
-<a href=/2018/03/13/use-docker-behind-http-proxy/ data-toggle=tooltip data-placement=top title=如何配置docker使用HTTP代理>&larr;
+<a href=/labveiltech/2018/03/13/use-docker-behind-http-proxy/ data-toggle=tooltip data-placement=top title=如何配置docker使用HTTP代理>&larr;
 Previous Post</a>
 </li>
 <li class=next>
-<a href=/2018/04/11/service-mesh-vs-api-gateway/ data-toggle=tooltip data-placement=top title="Service Mesh 和 API Gateway的关系探讨（译文）">Next
+<a href=/labveiltech/2018/04/11/service-mesh-vs-api-gateway/ data-toggle=tooltip data-placement=top title="Service Mesh 和 API Gateway的关系探讨（译文）">Next
 Post &rarr;</a>
 </li>
 </ul>
@@ -390,25 +390,25 @@ sidebar-container">
 <hr class="hidden-sm hidden-xs">
 <h5><a href=/tags/>FEATURED TAGS</a></h5>
 <div class=tags>
-<a href=/tags/docker title=docker>
+<a href=/labveiltech/tags/docker title=docker>
 docker
 </a>
-<a href=/tags/istio title=istio>
+<a href=/labveiltech/tags/istio title=istio>
 istio
 </a>
-<a href=/tags/kubernetes title=kubernetes>
+<a href=/labveiltech/tags/kubernetes title=kubernetes>
 kubernetes
 </a>
-<a href=/tags/microservice title=microservice>
+<a href=/labveiltech/tags/microservice title=microservice>
 microservice
 </a>
-<a href=/tags/security title=security>
+<a href=/labveiltech/tags/security title=security>
 security
 </a>
-<a href=/tags/service-mesh title=service-mesh>
+<a href=/labveiltech/tags/service-mesh title=service-mesh>
 service-mesh
 </a>
-<a href=/tags/tips title=tips>
+<a href=/labveiltech/tags/tips title=tips>
 tips
 </a>
 </div>
@@ -438,7 +438,7 @@ tips
 </a>
 </li>
 <li>
-<a target=_blank href=/your%20wechat%20qr%20code%20image>
+<a target=_blank href=/labveiltech/your%20wechat%20qr%20code%20image>
 <span class="fa-stack fa-lg">
 <i class="fas fa-circle fa-stack-2x"></i>
 <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
@@ -491,6 +491,6 @@ Copyright &copy; Huabing Blog 2023
 <script>function loadAsync(f,b){var c=document,d='script',a=c.createElement(d),e=c.getElementsByTagName(d)[0];a.src=f,b&&a.addEventListener('load',function(a){b(null,a)},!1),e.parentNode.insertBefore(a,e)}</script>
 <script>$('#tag_cloud').length!==0&&loadAsync("/js/jquery.tagcloud.js",function(){$.fn.tagcloud.defaults={color:{start:'#bbbbee',end:'#0085a1'}},$('#tag_cloud a').tagcloud()})</script>
 <script>loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js",function(){var a=document.querySelector("nav");a&&FastClick.attach(a)})</script>
-<script type=text/javascript>function generateCatalog(a){_containerSelector='div.post-container';var h=$(_containerSelector),c,d,e,f,g,b;return c=h.find('h1,h2,h3,h4,h5,h6'),$(a).html(''),c.each(function(){d=$(this).prop('tagName').toLowerCase(),g="#"+$(this).prop('id'),e=$(this).text(),b=$('<a href="'+g+'" rel="nofollow">'+e+'</a>'),f=$('<li class="'+d+'_nav"></li>').append(b),$(a).append(f)}),!0}generateCatalog(".catalog-body"),$(".catalog-toggle").click(function(a){a.preventDefault(),$('.side-catalog').toggleClass("fold")}),loadAsync("/js/jquery.nav.js",function(){$('.catalog-body').onePageNav({currentClass:"active",changeHash:!1,easing:"swing",filter:"",scrollSpeed:700,scrollOffset:0,scrollThreshold:.2,begin:null,end:null,scrollChange:null,padding:80})})</script>
+<script type=text/javascript>function generateCatalog(a){_containerSelector='div.post-container';var h=$(_containerSelector),c,d,e,f,g,b;return c=h.find('h1,h2,h3,h4,h5,h6'),$(a).html(''),c.each(function(){d=$(this).prop('tagName').toLowerCase(),g="#"+$(this).prop('id'),e=$(this).text(),b=$('<a href="'+g+'" rel="nofollow">'+e+'</a>'),f=$('<li class="'+d+'_nav"></li>').append(b),$(a).append(f)}),!0}generateCatalog(".catalog-body"),$(".catalog-toggle").click(function(a){a.preventDefault(),$('.side-catalog').toggleClass("fold")}),loadAsync("/labveiltech/js/jquery.nav.js",function(){$('.catalog-body').onePageNav({currentClass:"active",changeHash:!1,easing:"swing",filter:"",scrollSpeed:700,scrollOffset:0,scrollThreshold:.2,begin:null,end:null,scrollChange:null,padding:80})})</script>
 </body>
 </html>
