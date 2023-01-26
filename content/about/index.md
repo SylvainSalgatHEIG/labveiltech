@@ -1,10 +1,10 @@
 ---
 layout: page
-multilingual: true
+multilingual: false
 ---
 
 ## About Me
-**_Huabing Zhao_** is a software architect, an Istio Member and an ONAP PTL. He has a solid experience in the information and telecommunication technology industry for more than 17 years. 
+**_Sylvain Salgat_** is a software architect, an Istio Member and an ONAP PTL. He has a solid experience in the information and telecommunication technology industry for more than 17 years. 
 
 Throughout his career, he has built a number of large-scale, cross-country software systems, most of them are still running in production. 
 
