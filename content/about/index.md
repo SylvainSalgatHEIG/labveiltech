@@ -7,7 +7,7 @@ multilingual: false
 The purpose of this website is to create a space dedicated to digital awareness related to one of my passions, videography. This is actually an exercice, as in the real world, I'll be using two main tools to save my precious resources and build my digital awareness : browser bookmarks, linked to my Firefox account, and Youtube bookmarks, where you can actually create folders and order the videos you want to save.
 
 ## About Me
-**_Sylvain Salgat_** Computer hardware and multimedia computer scientist in the process of updating into an audiovisual producer. Swiss Army knife of digital, multidisciplinary and disciplined. Spell checker on legs, apprentice editor.
+My name is **_Sylvain Salgat_**, I'm a computer hardware and multimedia computer scientist in the process of updating into an audiovisual producer. Swiss Army knife of digital, multidisciplinary and disciplined. Spell checker on legs, apprentice editor.
 
 During my free time, you can find myself running, drumming or fixing computers. Also trying new vegan recipes and probably failing miserably. But I'll eventually get there!
 
