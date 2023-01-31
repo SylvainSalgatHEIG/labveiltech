@@ -9,7 +9,7 @@ multilingual: false
 During my free time, you can find myself running, drumming or fixing computers. Also trying new vegan recipes and probably failing miserably. But I'll eventually get there!
 
 ## My Ikigai
-![](img/ikigai.png)
+![](/static/img/ikigai.png)
 
 ## Open Source Projects
 |Project      |Role        |  Website   | GitHub     |
