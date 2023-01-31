@@ -3,7 +3,7 @@ layout:     post
 title:      "My digital awareness sources"
 subtitle:   ""
 description: "My digital awareness sources"
-date:       2023-01-26 11:00:00
+date:       2023-01-25 11:00:00
 author:     "Sylvain Salgat"
 image:      "/img/2018-02-09-vim-tips/matrix.jpg"
 published: true
