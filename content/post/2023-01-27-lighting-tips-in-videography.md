@@ -30,3 +30,6 @@ When shooting outdoors, natural lighting can often be the best type of lighting,
 
 ## What am I going to do with this information?
 Lighting is such an important part of filmmaking; it's literally the main aspect that separates amateur videos from professional ones. Therefore, I'll save this article in my Firefox bookmarks, and open it the day before every video shoot, to make sure that I didn't forget anything.
+
+## Source
+https://www.sheffieldav.com/education/importance-lighting-videos

@@ -22,3 +22,6 @@ This article is about a camera mod for Canon cameras, which is known as Magic La
 
 ## What am I going to do with this information?
 Before buying myself a new camera, I'll have to look beyond the official specsheet to check what Magic Lantern is capable of. Buying a used Canon camera might become a way better deal than a brand new one, with the same capabilities. I'll save this article in my Firefox bookmarks, and open it again once I'll have enough money saved to consider buying a used 5D Mark III.
+
+## Source
+https://www.eoshd.com/news/what-magic-lantern-reveals-5d-mark-iii-capable-of-4k-all-along/

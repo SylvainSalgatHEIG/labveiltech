@@ -33,3 +33,6 @@ The article also provides information on the maximum recording resolutions and c
 
 ## What am I going to do with this information?
 This article is a comprehensive guide to the different classes of Canon cameras for raw video and their capabilities. The information provided will help me choose the right camera for my needs and understand the limitations of each camera. I'll save this article in my Firefox bookmarks, and open it again when I find a good deal on a used Canon camera, to see if it meets the requirements to shoot raw video for enough time.
+
+## Source
+https://www.eoshd.com/raw-video/magic-lantern-raw-video-current-camera-capabilities-updated-2017/

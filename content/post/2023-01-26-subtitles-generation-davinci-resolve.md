@@ -25,4 +25,7 @@ The integration with DaVinci Resolve Studio 18 via API allows for easy navigatio
 
 The ability to convert existing SRT files to transcripts and use them in the tool, export transcripts to multiple formats, and batch transcriptions using transcription queuing are additional useful features. The plugin also includes the ability to perform partial re-transcription of timelines/videos/audio files, which can come in handy in case of errors or mistakes.
 
-Overall, the StoryToolkitAI plugin is a powerful and efficient tool for film editors, and could be a great asset in streamlining the editing process and save a lot of time and effort.
+Overall, I was really happy to discover that I could get a higher quality level of transcription compared to Adobe Premiere, thanks to AI. Even if the setup is a bit tedious, the StoryToolkitAI plugin is a powerful and efficient tool for film editors, and is a great asset in streamlining the editing process and save a lot of time and effort.
+
+## Source
+https://github.com/octimot/StoryToolkitAI
