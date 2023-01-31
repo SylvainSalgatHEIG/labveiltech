@@ -17,7 +17,7 @@ categories: [ Tips ]
 ## Why is this article important for me?
 As a filmmaker or videographer, one of the most important things to consider when creating a video is lighting. Lighting is crucial in setting the mood and atmosphere of the video and can greatly impact how viewers perceive the scene and the subject. In this article, the author discuss why lighting is so important in videos and how it can be used to enhance a scene and create the desired mood and atmosphere.
 
-## Which tool am I going to use for this experience?
+## What's the article about?
 One of the most commonly used techniques in video production is three point lighting. This technique involves using three main types of lighting: key lighting, fill lighting, and back lighting. Key lighting focuses on the main subject in the scene, fill lighting is used to eliminate shadows, and back lighting provides contrast between the subject and the environment. By using these three lighting techniques, the main subject can be properly illuminated and highlighted, which helps to draw the viewer's attention to the subject.
 
 * Key lighting is the most direct source of light in a scene, and it is usually installed first. The key light is usually placed on the side of the camera that the main subject is facing, and the angle and height of the light can be adjusted to change the mood and look of the entire scene.
