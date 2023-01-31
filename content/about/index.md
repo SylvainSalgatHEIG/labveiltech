@@ -17,3 +17,8 @@ During my free time, you can find myself running, drumming or fixing computers. 
 | Packige | Co-creator    | https://packige.tapasprod.ch | https://github.com/SylvainSalgatHEIG/ProjArt-fromneibaf |
 | Evolution of CO2 emissions from fossil fuels by country, from 1900 to 2014 | Creator | https://github.com/SylvainSalgatHEIG/ProjetVisualDon | https://github.com/SylvainSalgatHEIG/ProjetVisualDon |
 
+## Work field table
+|Domain      |Keywords        |  Subdomains   | Reasons     |
+| ----------- |----------- |----------- |----------- |
+| Digital content production | Articles, blog, social networks, video, photo    | Video production, photo production, article writing and editing, translation | Passion, skills |
+
